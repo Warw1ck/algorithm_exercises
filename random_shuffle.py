@@ -1,21 +1,22 @@
+from math import ceil
+from random import randint
 from numpy.random import rand
 
 
 def my_shuffle(*args):
     new = list(args)
-    the_rand = rand(len(args))
     for index, element in enumerate(args):
+        rand_number = randint(0, len(new)-1)
         new.remove(element)
-        num = round(the_rand[index]*10)
-        new.insert(num, element)
+        new.insert(rand_number, element)
     return new
-
 
 def my_shuffle2(*args):
     new = list(args)
-    the_rand = rand(len(args))
-    new = [args[round(x*10)]for x in the_rand]
+    for index in range(len(new)):
+        rand_number = randint(0, len(new)-1)
+        new[index], new[rand_number] = new[rand_number], new[index]
     return new
 
 
-print(my_shuffle(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+print(my_shuffle(1, 2, 3, 4, 5, 6, 7, 8))
