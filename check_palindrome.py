@@ -5,7 +5,7 @@ def check_palindrome(element):
     odd_or_even_plus = 0
     if len(element) % 2 == 1:
         odd_or_even_plus += 1
-        
+
     first_part = element[:floor(len(element)//2)]
     second_part = element[floor((len(element) // 2)+odd_or_even_plus):][::-1]
 
