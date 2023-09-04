@@ -1,10 +1,25 @@
 def number_stairs(stairs):
-    stairs_combination = 0
     first_number = 1
-    second_number = 0
+    second_number = 2
 
     for i in range(2, stairs):
-        pass
+        second_number = first_number + second_number
+        first_number = i
+
+    return second_number
+
+
+def climb_stairs(n, current=[]):
+    if n == 0:
+        print(current)
+    elif n >= 2:
+        climb_stairs(n - 2, current + ["2"])
+        climb_stairs(n - 1, current + ["1"])
+    else:
+        climb_stairs(n - 1, current + ["1"])
+
+
+
 
 
 
