@@ -1,7 +1,5 @@
 from math import ceil
 from random import randint
-from numpy.random import rand
-
 
 def my_shuffle(*args):
     new = list(args)
